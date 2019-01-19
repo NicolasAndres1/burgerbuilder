@@ -1,5 +1,6 @@
 // JS IMPORTS
 import React from 'react';
+import BuildControl from './BuildControl/BuildControl';
 
 // CSS IMPORTS
 import classes from './BuildControls.module.css';
@@ -12,8 +13,10 @@ const controls = [
 ];
 
 const buildControls = (props) => (
-    <div className={classes.BuildControl}>
-
+    <div className={classes.BuildControls}>
+        {controls.map(ctlr => (
+            <BuildControl key={ctlr.label} label={ctlr.label} />
+        ))}
     </div>    
 );
 

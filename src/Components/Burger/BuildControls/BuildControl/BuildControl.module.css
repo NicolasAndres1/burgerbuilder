@@ -1,19 +1,20 @@
 .BuildControl {
-    align-content: space-between;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 5px 0; 
-}
-
-.BuildControl button {
+    margin: 5px 0;
+  }
+   
+  .BuildControl button {
     display: block;
     font: inherit;
     padding: 5px;
     margin: 0 5px;
     width: 80px;
-    border: 1px solid gainsboro;
+    border: 1px solid #aa6817;
+    cursor: pointer;
     outline: none;
-}
+  }
 
 .BuildControl button:disabled {
     background-color: #AC9980;
