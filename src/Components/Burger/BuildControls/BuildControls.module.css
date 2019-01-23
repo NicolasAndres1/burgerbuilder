@@ -8,3 +8,12 @@
     margin: auto;
     padding: 10px 0px;
 }
+
+.BuildControlsBox {
+    border-radius: 15px;
+    border: black;
+    width: 50%;
+    margin: auto;
+    padding: 5px;
+    background-color: rgba(248, 248, 248, 0.637);
+}

@@ -51,6 +51,6 @@
 }
 
 .BuildControl .Add:hover,.BuildControl .Add:active {
-    background-color: #99703F;
+    background-color: rgb(202, 122, 24);
     color: white;
 }
