@@ -2,9 +2,8 @@
 import React, { Component } from 'react';
 import Burger from '../../Components/Burger/Burger';
 import BuildControls from '../../Components/Burger/BuildControls/BuildControls';
-
-// CSS IMPORTS
-import classes from './BurgerBuilder.module.css';
+import Modal from '../../Components/UI/Modal/Modal';
+import OrderSummary from '../../Components/Burger/OrderSummary/OrderSummary';
 
 const INGREDIENTS_PRICE = {
     salad: 0.4,
@@ -85,16 +84,17 @@ class BurgerBuilder extends Component {
 
         return (
             <>
-                <div className = {classes.Background}>
-                    <Burger ingredients={this.state.ingredients} />
-                    <BuildControls
-                        ingredientAdded={this.addIngredientHandler}
-                        ingredientRemoved={this.removeIngredientHandler}
-                        purchasable={this.state.purchasable}
-                        price={this.state.totalPrice}
-                        disabledIngredient={disabledIngredient}
-                    />
-                </div>
+                <Modal>
+                    <OrderSummary ingredients = {this.state.ingredients}/>
+                </Modal>
+                <Burger ingredients = {this.state.ingredients} />
+                <BuildControls
+                    ingredientAdded = {this.addIngredientHandler}
+                    ingredientRemoved = {this.removeIngredientHandler}
+                    purchasable = {this.state.purchasable}
+                    price = {this.state.totalPrice}
+                    disabledIngredient = {disabledIngredient}
+                />
             </>
         );
     }
