@@ -12,6 +12,7 @@ const orderSummary = (props) => {
     return(
         <>
             <h3>Your Order</h3>
+            <hr />
             <p>Burger with:</p>
             <ul>
                 {ingredientSummary}
