@@ -26,7 +26,7 @@ class BurgerBuilder extends Component {
     }
 
     updatedPurchaseState(ingredients) {
-        var sum = Object.keys(ingredients)
+        let sum = Object.keys(ingredients)
             .map(igKey => {
                 return ingredients[igKey];
             })
@@ -99,11 +99,11 @@ class BurgerBuilder extends Component {
             <>
                 <Modal showModal={this.state.purchasing}
                     modalClosed={this.purchaseCancelHandler}>
-                    <OrderSummary 
-                        ingredients={this.state.ingredients} 
+                    <OrderSummary
+                        ingredients={this.state.ingredients}
                         purchaseCancel={this.purchaseCancelHandler}
                         purchaseContinue={this.purchaseContinueHandler}
-                        price={this.state.totalPrice}/>
+                        price={this.state.totalPrice} />
                 </Modal>
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
