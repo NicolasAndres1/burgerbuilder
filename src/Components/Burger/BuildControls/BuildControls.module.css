@@ -18,6 +18,12 @@
     background-color: rgba(248, 248, 248, 0.637);
 }
 
+@media (max-width: 500px) {
+    .BuildControlsBox{
+        background-color: rgb(151, 110, 56);
+    }
+}
+
 .OrderButton {
     background-color: #DAD735;
     outline: none;
