@@ -1,23 +1,31 @@
 // JS IMPORTS
-import React from 'react';
+import React, { Component } from 'react';
 import Backdrop from '../Backdrop/Backdrop';
 
 // CSS IMPORTS
 import classes from './Modal.module.css';
 
-const modal = (props) => (
-    <>
-        <Backdrop
-            showModal={props.showModal}
-            clicked={props.modalClosed} />
-        <div className={(classes.Modal)}
-            style={{
-                transform: props.showModal ? 'translateY(0)' : 'translateY(-100vh)',
-                opacity: props.showModal ? '1' : '0'
-            }}>
-            {props.children}
-        </div>
-    </>
-);
+class Modal extends Component {
+    componentWillUpdate() {
+        console.log('[Modal] WillUpdate');
+    }
 
-export default modal;
+    render() {
+        return (
+            <>
+                <Backdrop
+                    showModal={this.props.showModal}
+                    clicked={this.props.modalClosed} />
+                <div className={(classes.Modal)}
+                    style={{
+                        transform: this.props.showModal ? 'translateY(0)' : 'translateY(-100vh)',
+                        opacity: this.props.showModal ? '1' : '0'
+                    }}>
+                    {this.props.children}
+                </div>
+            </>
+        );
+    }
+}
+
+export default Modal;
