@@ -1,6 +1,6 @@
 // JS IMPORTS
 import React, { Component } from 'react';
-import Layout from './Components/Layout/Layout';
+import Layout from './Containers/Layout/Layout';
 import BurgerBuilder from './Containers/BurgerBuilder/BurgerBuilder'
 
 // CSS IMPORTS
