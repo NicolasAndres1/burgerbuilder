@@ -33,7 +33,7 @@ class BurgerBuilder extends Component {
                 })
             })
             .catch(error => {
-                this.setState({error: true})
+                this.setState({ error: true })
             });
     }
 
@@ -125,7 +125,7 @@ class BurgerBuilder extends Component {
         //             purchasing: false
         //         })
         //     });
-        this.props.history.push('/checkout');
+        this.props.history.push('/checkout', {...this.state.ingredients});
     };
 
     render() {
@@ -160,7 +160,7 @@ class BurgerBuilder extends Component {
                 price={this.state.totalPrice} />
         }
 
-        if(this.state.loading) {
+        if (this.state.loading) {
             orderSummary = <Spinner />
         }
 
