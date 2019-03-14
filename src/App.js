@@ -9,13 +9,13 @@ import Checkout from './Containers/CheckOut/Checkout';
 // CSS IMPORTS
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div>
         <Layout>
           <Switch>
-            <Route path="/" exact component={BurgerBuilder} />
             <Route path="/checkout" component={Checkout} />
+            <Route path="/" exact component={BurgerBuilder} />
           </Switch>
         </Layout>
       </div>
