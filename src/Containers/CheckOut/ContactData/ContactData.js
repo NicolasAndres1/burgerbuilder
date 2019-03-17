@@ -94,7 +94,7 @@ class ContactData extends React.Component {
         event.preventDefault();
         this.setState({ loading: true });
         const formData = {};
-        for(let formElementId in this.state.orderForm) {
+        for (let formElementId in this.state.orderForm) {
             formData[formElementId] = this.state.orderForm[formElementId].value;
         }
 
@@ -118,8 +118,12 @@ class ContactData extends React.Component {
 
     }
 
-    checkValidity (value, rules) {
+    checkValidity(value, rules) {
         let isValid = false;
+
+        if (!rules) {
+            return true;
+        }
 
         if (rules.required) {
             isValid = value.trim() !== '';
@@ -128,7 +132,7 @@ class ContactData extends React.Component {
         return isValid;
     }
 
-    inputChangedHandler = (event ,inputID) => {
+    inputChangedHandler = (event, inputID) => {
         const updatedOrderForm = {
             ...this.state.orderForm
         }
@@ -140,12 +144,12 @@ class ContactData extends React.Component {
         updatedFormElement.touched = true;
 
         let formIsValid = true;
-        for(let inputIdentifier in updatedOrderForm) {
+        for (let inputIdentifier in updatedOrderForm) {
             formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
         }
-        
+
         updatedOrderForm[inputID] = updatedFormElement;
-        this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
+        this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });
     }
 
     render() {

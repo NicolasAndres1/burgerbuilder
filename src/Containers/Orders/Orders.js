@@ -13,28 +13,30 @@ class Orders extends React.Component {
         axios.get('/orders.json')
             .then(res => {
                 const fetchedOrders = [];
-                for(let key in res.data) {
+                for (let key in res.data) {
                     fetchedOrders.push({
                         ...res.data[key],
                         id: key
                     });
                 }
-                this.setState({orders: fetchedOrders, loading: false});
+                this.setState({ orders: fetchedOrders, loading: false });
             })
             .catch(err => {
-                this.setState({loading: false});
+                this.setState({ loading: false });
             });
     }
 
     render() {
+        const orderList = this.state.orders[0] == null ? <h3>Nothing here, let's add some burgers!</h3>
+            : this.state.orders.map(order => (
+                <Order
+                    key={order.id}
+                    ingredients={order.ingredients}
+                    price={order.price} />))
+
         return (
             <div>
-                {this.state.orders.map(order => (
-                    <Order 
-                        key={order.id}
-                        ingredients={order.ingredients}
-                        price={order.price}/>
-                ))}
+                {orderList}
             </div>
         );
     }
